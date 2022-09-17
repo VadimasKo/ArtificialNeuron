@@ -70,11 +70,12 @@ fn calculate_wheights(activation_f: fn(f32) -> i32) {
     if is_valid {
       solutions.push(Result(b, w1, w2, iter_count));
       iter_count = 0;
-      if solutions.len() == 5 {
+      if solutions.len() == 100000 {
         println!("Surasti 5 skirtingi sprendiniai!");
         for solution in &solutions {
           println!("Bias: {}, w1: {}, w2: {}, surasta per {} iteraciju", solution.0, solution.1, solution.2, solution.3)
         }
+        break;
       }
     }  
   } 
